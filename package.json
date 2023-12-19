@@ -3,19 +3,6 @@
   "version": "5.8.1",
   "repository": "https://rob-balfre@github.com/rob-balfre/svelte-select.git",
   "description": "A <Select> component for Svelte apps",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "npm run test:dev & npm run test:browser",
-    "test:dev": "rollup -cw",
-    "test:browser": "sirv test/public -p 3000 --dev --open",
-    "gen:docs": "node docs/generate_theming_variables_md.cjs",
-    "preprepare": "node src/remove-styles.cjs",
-    "prepare": "svelte-package",
-    "postprepare": "node src/post-prepare.cjs && npm run gen:docs",
-    "release": "release-it"
-  },
   "devDependencies": {
     "@rollup/plugin-alias": "^4.0.3",
     "@sveltejs/adapter-auto": "2.0.0",
@@ -64,10 +51,22 @@
   },
   "type": "module",
   "exports": {
+    "./package.json": "./package.json",
     ".": {
       "svelte": "./index.js",
       "types": "./index.d.ts"
-    }
+    },
+    "./ChevronIcon.svelte": "./ChevronIcon.svelte",
+    "./ClearIcon.svelte": "./ClearIcon.svelte",
+    "./LoadingIcon.svelte": "./LoadingIcon.svelte",
+    "./Select.svelte": "./Select.svelte",
+    "./filter": "./filter.js",
+    "./get-items": "./get-items.js",
+    "./no-styles/ChevronIcon.svelte": "./no-styles/ChevronIcon.svelte",
+    "./no-styles/ClearIcon.svelte": "./no-styles/ClearIcon.svelte",
+    "./no-styles/LoadingIcon.svelte": "./no-styles/LoadingIcon.svelte",
+    "./no-styles/Select.svelte": "./no-styles/Select.svelte",
+    "./tailwind.css": "./tailwind.css"
   },
   "dependencies": {
     "@floating-ui/dom": "^1.2.1",
